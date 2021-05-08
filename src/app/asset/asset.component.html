@@ -1,0 +1,53 @@
+<nav class="navbar navbar-dark bg-dark">
+    <form class="form-inline">
+        <button type="button" class="btn btn-primary mr-2" (click)="openAddAssetModal(newAssetModal)">
+            Add New Asset
+        </button>
+        <button type="button" class="btn btn-primary mr-2" (click)="openAddAssetModal(newAssetModal)">
+            Add Founds
+        </button>
+    </form>
+</nav>
+
+<div class="row">
+    <div class="col-sm-2">
+        <p>Total Invested: {{this.totalInvested()}}</p>
+        <p>Total Total P/L: {{this.totalProfitLoss()}}</p>
+    </div>
+</div>
+
+<ng-template #newAssetModal let-modal>
+    <div class="modal-header">
+        <h4 class="modal-title" id="modal-basic-title">Add Asset</h4>
+        <button type="button" class="close" aria-label="Close" (click)="modal.dismiss()">
+            <span aria-hidden="true">×</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        <div class="form-group">
+            <label for="asset">Asset</label>
+            <input id="asset" type="text" class="form-control" [(ngModel)]="asset.key"/>
+        </div>
+        <div class="form-group">
+            <label for="openedPrice">Asset Price When Openned Position</label>
+            <input id="openedPrice" type="text" class="form-control" [(ngModel)]="asset.positions[0].openedPrice"/>
+        </div>
+        <div class="form-group">
+            <label for="coinsOwned">Coins Owned</label>
+            <input id="coinsOwned" type="text" class="form-control" [(ngModel)]="asset.positions[0].coinsOwned"/>
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-danger" (click)="modal.dismiss()">Cancel</button>
+        <button type="button" class="btn btn-success" (click)="modal.close()">Add</button>
+    </div>
+</ng-template>
+
+<div class="shadow-none p-3 mb-5">
+    <div class="card-deck">
+        <ng-container *ngFor="let asset of this.assets">
+            <div card-component [asset]="asset" (onCloseAsset)="this.reloadAssets()"></div>
+        </ng-container>
+    </div>
+</div>

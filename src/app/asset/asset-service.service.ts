@@ -11,7 +11,7 @@ export class AssetService {
     private ASSETS = environment.API_URL + '/assets/';
     private ASSET = environment.API_URL + '/assets/{assetId}';
     private POSITION_CLOSE = environment.API_URL + '/assets/{assetId}/position/{possitionId}';
-    private POSITION_ADD = environment.API_URL + 'assets/{assetId}/position/';
+    private POSITION_ADD = environment.API_URL + '/assets/{assetId}/position/';
 
     public constructor() {
     }

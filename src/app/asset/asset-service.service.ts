@@ -1,16 +1,17 @@
 import {Injectable} from "@angular/core";
 import {Asset, Position} from "./asset-interface";
 import {HttpCommons} from "../util/http/http.commons";
+import {environment} from "../../environments/environment";
 
 @Injectable({
     providedIn: 'root'
 })
 export class AssetService {
 
-    private ASSETS = 'http://localhost:8080/assets/';
-    private ASSET = 'http://localhost:8080/assets/{assetId}';
-    private POSITION_CLOSE = 'http://localhost:8080/assets/{assetId}/position/{possitionId}';
-    private POSITION_ADD = 'http://localhost:8080/assets/{assetId}/position/';
+    private ASSETS = environment.API_URL + '/assets/';
+    private ASSET = environment.API_URL + '/assets/{assetId}';
+    private POSITION_CLOSE = environment.API_URL + '/assets/{assetId}/position/{possitionId}';
+    private POSITION_ADD = environment.API_URL + 'assets/{assetId}/position/';
 
     public constructor() {
     }

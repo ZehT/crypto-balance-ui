@@ -12,7 +12,7 @@ The project that show your future.
 - https://github.com/angular-schule/angular-cli-ghpages
 
 ## deploy
-ng deploy --prod --base-href=crypto-balance-ui
+ng deploy --build-target=prod --base-href=crypto-balance-ui
 
 ## URL
 https://zeht.github.io/crypto-balance-ui/

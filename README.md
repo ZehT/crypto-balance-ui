@@ -11,8 +11,8 @@ The project that show your future.
 - raw url:   https://raw.githubusercontent.com/spothq/cryptocurrency-icons/master/32/icon/uni.png
 - https://github.com/angular-schule/angular-cli-ghpages
 
-## deploy
-ng deploy --build-target=prod --base-href=crypto-balance-ui
+## deploy - defaults to production: "crypto-balance:build:production
+ng deploy --base-href=crypto-balance-ui
 
 ## URL
 https://zeht.github.io/crypto-balance-ui/
